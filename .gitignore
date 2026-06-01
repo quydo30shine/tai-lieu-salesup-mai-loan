@@ -1,0 +1,6 @@
+# Chỉ publish tài liệu đào tạo. Loại trừ toàn bộ số liệu kinh doanh nội bộ.
+*
+!.gitignore
+!README.md
+!index.html
+!Tai lieu dao tao Salesup - Cum Mai Loan.html
