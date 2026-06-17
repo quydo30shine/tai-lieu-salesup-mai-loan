@@ -24,9 +24,24 @@
   header h1{margin:6px 0 4px;font-size:24px;line-height:1.25}
   header p{margin:0;color:var(--muted);font-size:14px}
 
+  /* trainer (person) selector */
+  .pnav{position:sticky;top:0;z-index:40;background:rgba(238,241,247,.96);backdrop-filter:blur(8px);
+    padding:10px 0;border-bottom:1px solid var(--line)}
+  .pnav .wrap{display:flex;gap:8px}
+  .ptab{flex:1;text-align:center;padding:9px 4px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card);color:var(--text);font-weight:800;cursor:pointer;font-size:15px;
+    transition:.15s;user-select:none;line-height:1.15}
+  .ptab .who{display:block;font-size:10.5px;font-weight:600;color:var(--muted);margin-top:2px}
+  .ptab.active{background:linear-gradient(180deg,#2c3a63,#3a4a78);color:#fff;border-color:transparent;
+    box-shadow:0 6px 18px -6px #2c3a63}
+  .ptab.active .who{color:#cdd6ee}
+
+  .trainer{display:none}
+  .trainer.active{display:block}
+
   /* main tabs */
-  .tabs{position:sticky;top:0;z-index:30;background:rgba(238,241,247,.92);backdrop-filter:blur(8px);
-    padding:10px 0;margin:14px 0 4px;border-bottom:1px solid var(--line)}
+  .tabs{position:sticky;top:62px;z-index:30;background:rgba(238,241,247,.92);backdrop-filter:blur(8px);
+    padding:10px 0;margin:6px 0 4px;border-bottom:1px solid var(--line)}
   .tabs .wrap{display:flex;gap:8px}
   .tab{flex:1;text-align:center;padding:12px 6px;border-radius:12px;border:1px solid var(--line);
     background:var(--card);color:var(--muted);font-weight:700;cursor:pointer;font-size:15px;
@@ -118,13 +133,25 @@
 <header class="wrap">
   <span class="badge">Tài liệu đào tạo Salesup · T6</span>
   <h1>Cụm Mai Loan</h1>
-  <p>Sổ tay tra cứu &amp; luyện thoại — Relax · Uốn Nhuộm Dưỡng · Sản phẩm</p>
+  <p>Chọn người đào tạo để học kịch bản — <b>Mai Loan</b> · <b>Nga</b> · <b>Thanh Tâm</b>. Bấm câu thoại để copy.</p>
   <div class="tools">
     <span class="toolbtn" onclick="allAcc(true)">Mở tất cả</span>
     <span class="toolbtn" onclick="allAcc(false)">Thu gọn</span>
   </div>
 </header>
 
+<nav class="pnav">
+  <div class="wrap">
+    <div class="ptab active" data-trainer="t-ml">Mai Loan<span class="who">Relax · UND · SP</span></div>
+    <div class="ptab" data-trainer="t-nga">Nga<span class="who">UND · SP · Skinner</span></div>
+    <div class="ptab" data-trainer="t-tt">Thanh Tâm<span class="who">Hóa chất · UND · Massage</span></div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ################# MAI LOAN ################# -->
+<div class="trainer active" id="t-ml">
 <nav class="tabs">
   <div class="wrap">
     <div class="tab active" data-tab="relax"><span class="ico">💆</span>Relax</div>
@@ -132,8 +159,6 @@
     <div class="tab" data-tab="sp"><span class="ico">🧴</span>Sản phẩm</div>
   </div>
 </nav>
-
-<main class="wrap">
 
 <!-- ============== RELAX ============== -->
 <section class="panel active" id="relax">
@@ -929,29 +954,839 @@
 
   <p class="hint">💡 Bấm vào bất kỳ câu thoại nào để copy.</p>
 </section>
+</div><!-- /t-ml -->
+
+
+<!-- ################# NGA ################# -->
+<div class="trainer" id="t-nga">
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tab active" data-tab="nga-und"><span class="ico">✂️</span>UND</div>
+    <div class="tab" data-tab="nga-sp"><span class="ico">🧴</span>Sản phẩm</div>
+    <div class="tab" data-tab="nga-skinner"><span class="ico">💆</span>Skinner</div>
+  </div>
+</nav>
+
+<!-- ====== NGA · UND ====== -->
+<section class="panel active" id="nga-und">
+  <p class="intro">Uốn · Nhuộm · Dưỡng — phong cách tự nhiên, gỡ lý do, giữ kết nối. Bấm câu thoại để copy.</p>
+
+  <div class="card">
+    <h2>⭐ Kịch bản hóa chất 3 bước</h2>
+    <p class="lead">Nhận diện tóc → Đề xuất → Chốt nhẹ. 3 câu bắt buộc nói:</p>
+    <div class="say">“Tóc anh đang có dấu hiệu <b>xẹp nếp / khô / đuôi xù</b> rồi ạ.”<small>1 · Nhận diện tóc</small></div>
+    <div class="say">“Anh hợp nhất kiểu <b>[uốn / nhuộm / dưỡng phục hồi]</b> vì sẽ giúp <b>phồng – gọn – sáng mặt</b>.”<small>2 · Đề xuất</small></div>
+    <div class="say">“Em làm combo này cho anh nhé, lên form rất đẹp và an toàn.”<small>3 · Chốt nhẹ</small></div>
+    <div class="do"><b>Nguyên tắc:</b> mỗi ngày nói ít nhất 3 lượt cho 3 khách bất kỳ — không tính chốt được hay không, chỉ cần nói đúng kịch bản.</div>
+  </div>
+
+  <div class="card">
+    <h2>Tư vấn Uốn / Định hình — 6 bước</h2>
+    <p class="lead">Giúp khách hiểu vấn đề tóc → tò mò → tự hỏi → mình đề xuất. Bấm từng bước.</p>
+
+    <div class="acc open">
+      <div class="head"><span class="num">1</span><span class="t">Khám phá mong muốn</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Hôm nay anh đến đây mong muốn để kiểu tóc như nào ạ?”</div>
+        <ul class="guide"><li>Tạo cảm giác được phục vụ, không bị bán hàng.</li><li>Nắm xem khách muốn thay đổi hay giữ như cũ.</li></ul>
+      </div>
+    </div>
+
+    <div class="acc kbn">
+      <div class="head"><span class="num">2</span><span class="t">Gợi mở vấn đề (pain point)</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Nếu khách nói “Anh muốn để như lần trước”:</p>
+        <div class="say">“Lần trước anh cắt xong về nhà có vuốt được không? Có ra được kiểu như bên em vuốt cho anh không?”</div>
+        <p class="lead">Khách thường nói: “Về nhà vuốt không ra / khó vuốt / không bồng như ở tiệm.” → đây là điểm đau để dẫn vào tư vấn.</p>
+      </div>
+    </div>
+
+    <div class="acc">
+      <div class="head"><span class="num">3</span><span class="t">Gợi giải pháp</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Vậy để em làm cho anh cái nếp nhẹ, sau khi sấy xong là tóc tự vào form luôn, không cần vuốt sáp mà vẫn ra kiểu như anh mong muốn.”</div>
+        <p class="lead">Tạo hứng thú + tiện lợi → khách sẽ hỏi “Thế giờ em làm như nào?”.</p>
+      </div>
+    </div>
+
+    <div class="acc">
+      <div class="head"><span class="num">4</span><span class="t">Phân luồng nhu cầu</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Anh muốn tóc hơi xoăn nhẹ một chút hay là để tự nhiên hơn?”</div>
+        <p class="lead">Xoăn nhẹ → tư vấn <b>UỐN</b> · Tự nhiên → tư vấn <b>ĐỊNH HÌNH</b> (dưỡng nếp).</p>
+        <div class="say">“Nếu xoăn nhẹ thì em uốn tạo nếp, tóc vào form, giữ lâu hơn.”</div>
+        <div class="say">“Còn nếu tự nhiên thì em làm định hình, tóc vẫn vào nếp nhưng mềm và tự nhiên hơn.”</div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <div class="head"><span class="num">5</span><span class="t">Chốt mềm &amp; rõ ràng</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Hai dịch vụ này bên em có bảng giá rõ ràng, chỉ thêm chút chi phí ngoài phần cắt thôi. Anh xem bên này giúp em nhé.”</div>
+        <div class="say">“Thời gian làm khoảng … phút thôi, để em sắp xếp stylist cho anh luôn nhé.”</div>
+        <ul class="guide"><li>Luôn nói <b>thời gian trước</b> → khách kiểm soát được cảm giác.</li><li>Không ép, chỉ mời trải nghiệm.</li></ul>
+      </div>
+    </div>
+
+    <div class="acc">
+      <div class="head"><span class="num">6</span><span class="t">Duy trì tư vấn 100%</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Dù khách làm hay không vẫn tư vấn để họ hiểu tóc mình → lần sau quay lại sẽ nhớ lời tư vấn.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Mùa hè — Mở nhu cầu</h2>
+    <p class="lead">3 nỗi đau mùa hè: <b>khô xơ</b> do nắng/điều hòa/đi biển · <b>phai màu</b> nhanh · <b>khó vào nếp, bông xù</b>. Đừng mở bằng “Anh làm uốn không?”.</p>
+    <h3>Uốn</h3>
+    <div class="say">“Em thấy tóc anh đang khá khỏe, nếu mình tạo thêm độ phồng và vào nếp thì buổi sáng gần như không cần tạo kiểu nhiều đâu ạ.”</div>
+    <div class="say">“Mùa hè mình đi chơi, du lịch khá nhiều, uốn nhẹ giúp tóc luôn có form, chỉ cần sấy 2–3 phút là đẹp.”</div>
+    <h3>Nhuộm</h3>
+    <div class="say">“Mùa này khách bên em đang làm màu khá nhiều vì đi du lịch, chụp ảnh lên màu tóc nhìn trẻ và sáng mặt hơn rất nhiều.”</div>
+    <div class="say">“Với tone da của anh em nghĩ các màu nâu lạnh, nâu khói hoặc nâu trà sẽ dễ chăm sóc mà vẫn nổi bật.”</div>
+    <div class="say">“Hiện tóc mình đang khá đồng màu, nhuộm lên nhìn thay đổi rõ nhất mà không cần cắt quá nhiều.”</div>
+  </div>
+
+  <div class="card">
+    <h2>Xử lý từ chối</h2>
+    <p class="lead">Bấm từng tình huống. Nguyên tắc: không cãi – không phủ định cảm xúc – trả quyền quyết định cho khách.</p>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">1</span><span class="t">“Anh để tự nhiên, cắt như lần trước.”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ, để tự nhiên là đúng gu của anh rồi. Cho em hỏi thêm một chút, lần trước anh thấy <b>chỗ nào chưa ưng nhất</b> để lần này em chỉnh cho chuẩn hơn?”</div></div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">2</span><span class="t">“Anh không muốn dùng hoá chất.”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ, em hiểu. Thường khách nói vậy là vì <b>sợ hư tóc hoặc kích ứng da đầu</b>, không biết anh đang lo phần nào nhất để em tư vấn đúng?”</div></div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">3</span><span class="t">“Anh uốn 1 lần rồi, không hợp.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ, vậy ạ — không biết anh làm ở đây hay làm ở đâu ạ? Thường không hợp là do <b>kiểu chưa đúng tóc hoặc kỹ thuật cũ</b>, chứ không phải ai uốn cũng không hợp. Em nói trước để anh hiểu rõ, <b>không áp lại cách cũ đâu ạ</b>.”</div>
+        <div class="say">“Anh cho em xem lại kiểu lần trước được không, để em xem mình không hợp ở chỗ nào. Bên 30Shine tụi em làm tới khi khách ưng thì thôi, trước khi làm cho anh xem ảnh mẫu rồi thống nhất kỹ, chứ không nói miệng để anh tự tưởng tượng.”</div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">4</span><span class="t">“Da đầu anh yếu, nhạy cảm.”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ, với da đầu như vậy thì mình <b>càng phải cẩn thận hơn</b>, chứ không làm ẩu được. Bên em luôn kiểm tra da đầu trước, chọn thuốc nhẹ và hạn chế tiếp xúc da, <b>ưu tiên an toàn trước rồi mới tính làm hay không</b>.”</div></div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">5</span><span class="t">“Em lại chuẩn bị bán hàng đúng không?”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ không anh ạ, em không bán nếu không cần. Em nói trước để anh <b>hiểu tình trạng tóc của mình</b>, còn làm hay không là <b>quyết định của anh</b>, em không ép.”</div></div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">6</span><span class="t">“Anh chỉ cắt thôi.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ vâng anh, em vẫn cắt cho anh như bình thường ạ. Em xem lại lịch sử tóc thì thấy anh để kiểu này cũng khá lâu rồi đó anh.”</div>
+        <div class="say">“Với khuôn mặt của anh, chỉ cần thay đổi nhẹ một chút là nhìn gọn và đẹp hơn nhiều. Đặc biệt phần tóc trên nếu làm bồng lên xíu thì nhìn sáng mặt hơn hẳn.”</div>
+        <div class="say">“Nếu hôm nay anh không vội, mình chỉnh thêm chút cho tóc vào nếp là về nhà đỡ mất thời gian tạo kiểu lắm ạ.”</div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">7</span><span class="t">Khách nghe xong im lặng</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Nãy giờ em cũng chia sẻ với anh mấy điểm để tóc nhìn đẹp hơn rồi. Thôi để em cắt và tạo kiểu cho anh trước nha.”</div>
+        <div class="say">“Trong lúc em làm, anh cứ suy nghĩ thêm, thấy hợp thì mình làm, không thì cũng không sao đâu anh.”</div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">8</span><span class="t">“Để gần Tết / lần sau anh làm.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ, sao hôm nay anh không làm luôn cho đẹp luôn ạ?”</div>
+        <div class="say">“Anh còn bao nhiêu thời gian nữa thì phải đi ạ?”<small>Giọng quan tâm, không gặng hỏi.</small></div>
+        <div class="say">“Dạ, combo bên em chỉ khoảng 25–30 phút là xong, em làm luôn cho anh nha.”<small>Đòn “gỡ lý do” khi khách còn ~30 phút.</small></div>
+        <div class="say">“Dạ, vậy lần sau anh ghé em sắp xếp trước cho nhanh, mình khỏi phải chờ. Anh cho em xin Zalo, khi nào anh định làm nhắn em là em đặt lịch luôn.”<small>Khách thực sự bận → vẫn chốt được kết nối.</small></div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">9</span><span class="t">“Để anh suy nghĩ thêm.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ vâng anh, cái này em hiểu mà. Bản thân em lần đầu thay đổi kiểu tóc cũng phải suy nghĩ nhiều, cũng sợ không hợp.”</div>
+        <div class="say">“Trong lúc em cắt cho anh, anh xem lại mấy hình tóc lúc nãy để thấy sự khác biệt rõ hơn. Giống em đó anh, lúc đổi rồi mới thấy khác hẳn, giờ không muốn quay lại kiểu cũ nữa.”</div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">★</span><span class="t">“Sợ rụng tóc, không làm hóa chất.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ, trước đây anh có từng làm hóa chất ở đâu chưa ạ? Anh từng làm bên em bao giờ chưa?”<small>Xác định khách từng bị hư tóc hay chỉ nghe nói.</small></div>
+        <div class="say">“Anh nhìn tóc bọn em nè, tụi em là thợ, làm hoá chất gần như mỗi tháng 2 lần mà tóc vẫn khỏe, không hề rụng. Lý do là sản phẩm bên em đều chính hãng, có giấy tờ kiểm chứng rõ ràng.”</div>
+        <div class="say">“Bên em có bảo hành 7 ngày sau khi làm, tóc có vấn đề gì tụi em xử lý ngay, anh cứ yên tâm nha.”</div>
+        <div class="say">“Anh sợ rụng tóc là đúng rồi, vì ngoài thị trường nhiều loại thuốc không đảm bảo. Nhưng bên em dùng hàng chính hãng, tụi em làm hàng tháng mà tóc vẫn khỏe — anh nhìn tóc tụi em nè. Bên em còn bảo hành 7 ngày, có gì xử lý ngay.”<small>Bản ngắn dễ nhớ. Khi nói nên chỉ tay vào tóc mình/đồng nghiệp.</small></div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">+</span><span class="t">“Anh không thích uốn / Anh sợ già.”</span><span class="chev">▶</span></div>
+      <div class="body">
+        <div class="say">“Dạ em hiểu ạ. Kiểu em tư vấn không phải uốn xoăn đâu anh, mục đích là tạo độ phồng và giúp tóc vào form thôi. Sáng anh vuốt nhanh 1–2 phút là được, đỡ phải sấy hay chỉnh nhiều.”</div>
+        <div class="say">“Các kiểu uốn nam giờ chủ yếu tạo texture và độ phồng thôi anh. Khách làm thường nhìn trẻ và gọn gàng hơn, chứ không phải kiểu xoăn truyền thống đâu ạ.”</div>
+      </div>
+    </div>
+
+    <div class="acc refuse">
+      <div class="head"><span class="num">$</span><span class="t">Khách quen: “Sao giá giờ cao hơn?”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ anh để ý rất kỹ luôn ạ. Bên em điều chỉnh để giữ trải nghiệm ổn định cho khách quen như anh — không làm vội, không rút ngắn thời gian dù salon đông. Nên giá nhích nhẹ để đảm bảo mỗi khách vẫn được chăm sóc đủ như trước.”</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Bán thêm SP sau Uốn / Nhuộm</h2>
+    <p class="lead">10 cách mở lời + chốt nhẹ — xịt phồng &amp; tinh dầu giữ form sau hóa chất.</p>
+
+    <div class="acc">
+      <div class="head"><span class="num">1</span><span class="t">Nhẹ nhàng — hỏi trước</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Ở nhà anh có dùng xịt phồng hay tinh dầu chưa ạ? Tóc mình vừa uốn xong, dùng thêm cái này giữ form đẹp hơn mà không cần sấy.”</div><div class="say">“Anh lấy 1 chai này nha, về dùng cho tiện.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">2</span><span class="t">Nhấn tiện — không mất công</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Kiểu tóc này ở nhà anh chỉ cần xịt 1–2 lần là vào nếp, không cần sấy hay vuốt cầu kỳ đâu ạ.”</div><div class="say">“Em lấy xịt phồng này cho anh luôn nhé.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">3</span><span class="t">Cho khách lười tạo kiểu</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Tóc anh uốn xong để đẹp lâu thì xịt phồng là đủ, sáng dậy xịt nhẹ là gọn, không cần làm gì thêm.”</div><div class="say">“Anh dùng chai này là nhàn nhất đó, em lấy cho anh nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">4</span><span class="t">Tóc khô — vừa uốn / nhuộm</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Tóc mình vừa qua hóa chất, em bôi thêm tinh dầu cho anh thử, để tóc mềm hơn và không bị khô.”</div><div class="say">“Anh lấy 1 chai tinh dầu này dùng kèm cho tóc khoẻ nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">5</span><span class="t">Cho khách sợ nặng tóc</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Tinh dầu này nhẹ tóc lắm anh, không bết đâu, chỉ cần 1 giọt là tóc mềm và nhìn khoẻ hơn liền.”</div><div class="say">“Anh dùng chai này là hợp nhất, em để cho anh nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">6</span><span class="t">So sánh trước – sau</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Anh sờ thử bên này với bên kia giúp em nhé, bên có tinh dầu mềm và gọn hơn rõ đúng không ạ?”</div><div class="say">“Mình lấy tinh dầu này dùng ở nhà cho tóc luôn như vậy nha anh.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">7</span><span class="t">Nhấn giữ form uốn</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Uốn đẹp nhất là 2–3 tuần đầu, xịt phồng này giúp giữ form lâu hơn, không bị xẹp sớm.”</div><div class="say">“Anh lấy 1 chai xịt này giữ form cho đẹp lâu nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">8</span><span class="t">Tiết kiệm thời gian buổi sáng</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Nhiều anh dùng chai này vì sáng không cần chỉnh tóc lâu, xịt nhanh là đi làm được luôn ạ.”</div><div class="say">“Anh lấy chai này cho đỡ mất thời gian mỗi sáng nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">9</span><span class="t">Không ép — cho lựa chọn</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Cái này em đề xuất thêm cho anh thôi, dùng thì tóc đẹp và nhàn hơn, không thì mình để lần sau cũng được.”</div><div class="say">“Nếu tiện thì anh lấy 1 chai dùng thử trước nha.”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">10</span><span class="t">Chốt nhẹ — mặc định dùng</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Em để chai này cho anh dùng thử luôn nhé, về nhà anh làm đúng như em vừa làm là tóc ra form như ở salon.”</div><div class="say">“Em tính luôn chai này cho anh nha.”</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== NGA · SẢN PHẨM ====== -->
+<section class="panel" id="nga-sp">
+  <p class="intro">Kịch bản bán SP — bản cho khách khó tính, mở lời nhẹ, không bán ngay. Bấm chọn sản phẩm.</p>
+
+  <div class="subnav">
+    <span class="pill active" data-sub="nga-sp0">Nguyên tắc</span>
+    <span class="pill" data-sub="nga-sp1">SRM Rau má</span>
+    <span class="pill" data-sub="nga-sp2">Serum 7in1</span>
+    <span class="pill" data-sub="nga-sp3">Davines Gàu</span>
+    <span class="pill" data-sub="nga-sp4">Ngưu Bàng</span>
+    <span class="pill" data-sub="nga-sp5">Xịt phồng</span>
+    <span class="pill" data-sub="nga-sp6">Sáp Glanzen</span>
+  </div>
+
+  <div class="sub active" id="nga-sp0">
+    <div class="card">
+      <h2>3 câu tư vấn nhanh (điểm thấp)</h2>
+      <h3>Skinner</h3>
+      <div class="say">“Anh da dầu đúng không? Em xem lỗ chân lông giãn, nhiều dầu ở vùng mũi — dùng sữa này giúp giảm dầu rõ sau vài ngày.”</div>
+      <div class="say">“Anh rửa mặt xong có cảm giác căng rát không? Nếu có → da khô, dùng loại này mềm hẳn.”</div>
+      <div class="say">“Da đầu anh có gàu mảng nhỏ → em dùng Davines trị đúng gốc luôn.”</div>
+      <h3>Stylist</h3>
+      <div class="say">“Tóc anh mềm, sợi nhỏ → em xịt phồng form lên gấp đôi.”</div>
+      <div class="say">“Anh hay mất nếp đúng không? Sáp Glanzen bám tốt – không bết, đúng kiểu anh thích.”</div>
+      <h3>5 kỹ năng chốt (lên điểm 5)</h3>
+      <ul class="guide">
+        <li><b>Gợi trên bề mặt:</b> chỉ vấn đề bằng mắt thường.</li>
+        <li><b>So sánh trước – sau:</b> “Da anh thế này dùng loại này 3 ngày là khác ngay.”</li>
+        <li><b>Combo hóa:</b> Skinner = Rửa mặt + Dưỡng + Davines gàu · Stylist = Xịt phồng + Glanzen.</li>
+        <li><b>Chốt lý tài chính:</b> “Một ngày chưa đến 10k mà tóc giữ form cả ngày.”</li>
+        <li><b>Chốt theo hậu quả:</b> “Anh không dùng thì tóc lại xẹp như lúc bước vào ấy.”</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp1">
+    <div class="card">
+      <h2>🧴 SRM Rau má — khách khó tính</h2>
+      <div class="tagrow"><span class="tag">GGG · Chiết xuất rau má</span><span class="tag">pH 5.5–6</span><span class="tag">490k → 379k</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">A</span><span class="t">Mở lời — giảm đề kháng</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh cho em hỏi chút, khi rửa mặt anh có gặp tình trạng khô căng hay đổ dầu lại nhanh không ạ? Em hỏi để chăm da cho anh tốt hơn, không phải để bán đâu ạ.”</div>
+          <div class="say">“Anh ơi, mùa này anh có thấy mặt nhanh đổ dầu hoặc vừa rửa xong vài tiếng đã bóng không ạ?”<small>Bản mùa hè.</small></div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">B</span><span class="t">Phản hồi theo tình trạng</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead">“Anh dùng sữa rửa mặt rồi.”</p>
+          <div class="say">“Dạ tốt ạ! Chỉ là mỗi loại có độ pH khác nhau, pH cao quá thì dễ khô da hoặc tăng dầu lại nhanh. Em check da anh đang hơi… (khô/dầu/nhạy) nên mới hỏi.”</div>
+          <p class="lead">“Loại nào cũng như nhau.”</p>
+          <div class="say">“Đúng là nhiều loại na ná nhau thật. Khác biệt lớn nhất là độ pH và khả năng giữ ẩm. Da nam mình khô căng rất nhanh nếu pH cao, chọn đúng loại sẽ đỡ khó chịu hẳn.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">C</span><span class="t">Giới thiệu &amp; chốt</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Bên em có dòng Sữa rửa mặt Rau Má — điểm mạnh nhất là <b>sạch nhưng không khô</b>. pH chỉ 5.5–6 nên rửa xong da mềm, không bị căng. Anh nào da dễ đổ dầu hoặc hay khô sau rửa mặt dùng đều ok.”</div>
+          <div class="say">“Anh cứ lấy 1 tuýp dùng thử xem da có hợp không. Không hợp thì lần sau đổi loại khác cũng được, nhưng đa số khách dùng xong thấy sạch thoáng và mịn hơn.”</div>
+        </div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý từ chối</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Đang dùng loại khác.”</b></p>
+          <div class="say">“Dạ ok anh, mỗi da hợp mỗi loại. Dòng này pH thấp nên rửa xong da mịn hơn. Anh thử 1 tuýp xem cảm giác khác thế nào, không hợp thì quay lại loại cũ cũng được.”</div>
+          <p class="lead"><b>“Để hôm khác.”</b></p>
+          <div class="say">“Dạ được anh. Chỉ là hôm nay da anh em thấy hơi… (khô/dầu/nhạy), dùng dòng này cải thiện khá nhanh. Anh cầm 1 tuýp, 2 tháng mới hết — tiện lắm.”</div>
+          <p class="lead"><b>“Nhiều loại quá không biết cái nào.”</b></p>
+          <div class="say">“Đúng rồi anh. Bên em chọn cho anh loại dễ dùng nhất: sạch – không khô – hợp mọi da. Cứ Rau Má là an toàn nhất.”</div>
+          <p class="lead"><b>“Sợ mua về không hợp.”</b></p>
+          <div class="say">“Dạ em hiểu mà anh, da mỗi người mỗi khác. Nên em mới gợi ý thử 1 tuýp nhỏ trước, dùng 2–3 hôm là biết hợp ngay vì rửa xong da mềm, không căng.”</div>
+          <p class="lead"><b>“Đang dùng của vợ.”</b></p>
+          <div class="say">“Dạ em hiểu anh, nhiều anh bên em cũng vậy. Chỉ là da nam tiết dầu nhiều hơn da nữ khá nhiều nên sản phẩm vợ dùng hợp nhưng chưa chắc tối ưu cho da anh. Em hỏi để xem tình trạng da hiện tại của anh thôi ạ.”</div>
+          <p class="lead">Bản 12 giây:</p>
+          <div class="say">“Anh thử dòng Rau Má này nha, sạch sâu nhưng không hề khô, pH chuẩn nên da rất dễ chịu. Anh lấy 1 tuýp thử, không hợp thì lần sau đổi loại khác cũng được ạ.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp2">
+    <div class="card">
+      <h2>🧴 Serum Dr.FORSKIN 7in1 (Dabo)</h2>
+      <div class="tagrow"><span class="tag">Cấp ẩm – sáng da</span><span class="tag">1 bước · ~10s</span><span class="tag">599k</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">A</span><span class="t">Mở lời (đừng nói “mùa hè còn dưỡng làm gì”)</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh ơi, mùa hè nhiều anh nghĩ da dầu thì không cần dưỡng, nhưng thực tế da thiếu ẩm lại càng đổ dầu nhiều hơn.”</div>
+          <div class="say">“Da anh đang hơi bóng dầu vùng chữ T. Khi da thiếu nước sẽ tự tiết dầu để bù lại nên mặt càng dễ bóng hơn.”</div>
+          <div class="say">“Anh ơi, mùa này trời hanh nên da nam dễ bị khô – ráp. Mấy hôm nay anh có thấy da hơi căng hoặc bong nhẹ không?”<small>Bản mùa đông/da khô.</small></div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">B</span><span class="t">Giải pháp</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Bên em có Serum Dr.FORSKIN 7in1 dành riêng cho nam: <b>cấp ẩm sâu, chống khô – chống căng</b> và <b>làm sáng đều màu sau vài tuần</b>. Thẩm thấu nhanh, không nhờn – không bết – không bí da.”</div>
+          <div class="say">“Mình không cần cầu kỳ nhiều bước, chỉ cần 1 bước thôi, dùng khoảng 2 tuần là da khác hẳn rồi.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">C</span><span class="t">Chốt không ép</span><span class="chev">▶</span></div>
+        <div class="body"><div class="say">“Anh thử 1 chai dùng mỗi tối xem da có đỡ khô và sáng hơn không. 120ml dùng hơn 2 tháng, nếu không hợp thì lần sau đổi loại khác cũng được ạ.”</div></div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý từ chối</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Sợ nhờn / sợ dính.”</b></p>
+          <div class="say">“Dạ serum này nhẹ như nước, thẩm thấu trong vài giây, hoàn toàn không dính – nam bên em dùng đều khen.”</div>
+          <p class="lead"><b>“Không dùng dưỡng.”</b></p>
+          <div class="say">“Dạ đúng rồi, nhiều khách nam cũng chỉ dùng mỗi sữa rửa mặt. Nhưng mùa hè da càng dầu thì càng nên cấp ẩm đúng cách để cân bằng dầu.”</div>
+          <p class="lead"><b>“Đang dùng loại khác.”</b></p>
+          <div class="say">“Dạ tốt ạ. Mùa hè da dễ cháy nắng, bị sạm — serum này cấp ẩm sâu và thẩm thấu nhanh, dùng thêm 1 bước buổi tối giúp phục hồi da cháy nắng rất tốt.”</div>
+          <p class="lead"><b>“Để hôm khác.”</b></p>
+          <div class="say">“Dạ được anh. Hôm nay da anh em thấy hơi khô vùng… (má/cằm/mũi), dòng này dưỡng 1–2 hôm là da mềm mịn lại ngay. Anh cầm 1 chai dùng trước cho đỡ khô nha.”</div>
+          <p class="lead">Bản 12 giây:</p>
+          <div class="say">“Anh ơi, mùa này da dễ khô và xỉn. Serum này cấp ẩm sâu – sáng da – không nhờn, 1 bước mỗi tối là đủ. Anh lấy 1 chai dùng thử nha?”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp3">
+    <div class="card">
+      <h2>🧴 Davines Purifying — trị gàu</h2>
+      <div class="tagrow"><span class="tag">Selen Sulphit + Bồ công anh</span><span class="tag">Dòng điều trị</span><span class="tag">424k</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">1</span><span class="t">HOOK — gợi mở vấn đề (15s)</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh ơi, em thấy da đầu anh đang có <b>gàu + khô</b>, da liễu gọi là gàu do nấm + thời tiết. Dạo này anh có hay bị <b>ngứa – bong mảng trắng</b> không ạ?”</div>
+          <div class="say">“Dạ ngay vùng này da đầu đang bong nhẹ, đặc trưng của gàu do khô lạnh, nếu không xử lý đúng sẽ dễ tái đi tái lại.”<small>Dùng khi khách bảo “không”.</small></div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">2</span><span class="t">CHECK — khai thác nhu cầu</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh đã đổi dầu gội mấy lần mà vẫn chưa hết gàu đúng không ạ?”</div>
+          <div class="say">“Anh gội xong có bị khô – căng da đầu không? Gàu xuất hiện theo đợt hay quanh năm ạ?”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">3</span><span class="t">GIẢI PHÁP + PROOF</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Gàu của mình xuất phát từ nấm + da đầu khô nên em dùng Davines Purifying. Dòng này mạnh hơn dầu trị gàu thường ở 3 điểm: <b>Selen Sulphit</b> xử lý tận gốc nấm → giảm gàu nhanh; <b>Bồ công anh</b> giảm ngứa, giảm viêm, giữ ẩm → hết bong vảy; gội xong tóc vẫn mềm, không khô xơ. Anh dùng 1–2 tuần là thấy giảm rõ.”</div>
+          <div class="say">“Dòng này bên em hay dùng cho khách gàu lâu năm, cứ 1–2 tuần là giảm rất nhanh. Nhiều anh quay lại bảo đỡ ngứa, không còn mảng trắng rơi trên áo.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">4</span><span class="t">CHỐT — 2 lựa chọn</span><span class="chev">▶</span></div>
+        <div class="body"><div class="say">“Giờ em xử lý da đầu cho anh tại salon luôn. Còn để gàu không quay lại, anh muốn em chuẩn bị một chai dùng tại nhà hay để em đưa anh tham khảo trước ạ?”</div></div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý từ chối</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Đang dùng dầu gội khác.”</b></p>
+          <div class="say">“Dạ dầu gội thường chỉ làm sạch bề mặt, còn gàu của anh là do nấm, nếu không xử lý đúng hoạt chất thì dễ tái lại. Davines có Selen Sulphit chuyên trị gốc nấm nên hiệu quả bền hơn.”</div>
+          <p class="lead"><b>“Đắt.”</b></p>
+          <div class="say">“Dạ Davines là dòng điều trị, hiệu quả nhanh hơn dầu trị gàu thường, đặc biệt không làm khô tóc. Một chai dùng 1–2 tháng, tính ra mỗi lần gội chỉ vài nghìn thôi ạ.”</div>
+          <p class="lead"><b>“Để khi khác.”</b></p>
+          <div class="say">“Dạ mùa này gàu bùng lại rất nhanh. Anh xử lý luôn hôm nay để bớt ngứa, hết bong vảy, đỡ phải chịu mấy ngày khó chịu.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp4">
+    <div class="card">
+      <h2>🧴 Bio Ngưu Bàng — giảm rụng</h2>
+      <div class="tagrow"><span class="tag">Pharma Bio Laboratory</span><span class="tag">Rễ ngưu bàng · Capauxein</span><span class="tag">Dạng serum, không bết</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">A</span><span class="t">Mở lời &amp; đào nhu cầu</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Dạo này anh có thấy tóc rụng nhiều hơn bình thường không? Kiểu vuốt tóc, gội đầu hoặc ngủ dậy thấy rụng nhiều á.”</div>
+          <div class="say">“Anh bị lâu chưa? Có mỏng hoặc thưa ở đỉnh đầu, hai bên tóc mai không? Da đầu có hay dầu hoặc ngứa không?”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">B</span><span class="t">Tạo nhận thức vấn đề</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Rụng tóc để lâu dễ yếu nang tóc lắm. Nhiều người lúc đầu chỉ rụng nhẹ nhưng sau tóc thưa rõ luôn. Đặc biệt stress, thức khuya, ăn uống hoặc da đầu dầu nhiều là dễ rụng hơn.”</div>
+          <div class="say">“Ở nhà anh có dùng serum hay dầu gội hỗ trợ rụng tóc gì chưa? Có nhiều loại hợp người này nhưng chưa chắc hợp cơ địa người khác.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">C</span><span class="t">Giới thiệu sản phẩm</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Bên em có dòng Bio Ngưu Bàng, khách rụng tóc phản hồi khá tốt. Dạng serum hỗ trợ giảm rụng và kích thích mọc tóc, của Pharma Bio Laboratory.”</div>
+          <div class="say">“Trong này có chiết xuất rễ ngưu bàng, kết hợp vitamin complex và phức hợp Capauxein — hỗ trợ nuôi nang tóc, giúp tóc chắc khỏe hơn.”</div>
+          <div class="say">“Nhiều khách dùng thấy tóc đỡ rụng lúc gội và chải. Có người dùng một thời gian thấy tóc con lên thêm. Anh ra quầy em lấy cho xem, dạng serum nên không bết, xịt lên da đầu massage nhẹ là được.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">D</span><span class="t">Cách dùng</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Sau khi gội sạch, xịt lên da đầu cách 5–7cm rồi massage nhẹ, không cần gội lại. Đang rụng nhiều thì dùng hằng ngày, khi ổn hơn duy trì 2–3 lần/tuần.”</div>
+        </div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý từ chối + Chốt</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Còn trẻ chưa cần.”</b></p>
+          <div class="say">“Dạ chăm sớm giữ tóc dễ hơn để thưa nhiều mới chăm.”</div>
+          <p class="lead"><b>“Đổi nhiều loại rồi.”</b></p>
+          <div class="say">“Dạ quan trọng là hợp da đầu, dòng này nhiều khách rụng tóc dùng ổn.”</div>
+          <p class="lead"><b>“Có mọc thật không?”</b></p>
+          <div class="say">“Dạ mình hỗ trợ nuôi tóc khỏe và giảm rụng trước, dùng đều sẽ thấy cải thiện dần. Tóc mỗi người đáp ứng khác nhau, không ai dám nói xài là mọc liền, nhưng bên em giữ dòng này lâu vì khách phản hồi ổn.”</div>
+          <p class="lead">Chốt:</p>
+          <div class="say">“Anh tham khảo thử nha. Nhà sản xuất làm cả bộ xịt, dầu xả và viên uống để hỗ trợ đầy đủ, nếu được anh dùng nguyên bộ cho hiệu quả. Tóc đang rụng nhiều hoặc mỏng dần thì nên chăm sớm, để lâu nang tóc yếu sẽ khó phục hồi hơn.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp5">
+    <div class="card">
+      <h2>🧴 Xịt phồng Glanzen Booster 2025</h2>
+      <div class="tagrow"><span class="tag">Pre-styling · công nghệ Đức</span><span class="tag">Không wax – không keo</span><span class="tag">Giữ phồng 5–8h</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">1</span><span class="t">HOOK + đồng cảm</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh ơi, tóc anh thuộc nhóm <b>mỏng – dễ xẹp</b>, đặc biệt là phần đỉnh. Mùa này gió nhiều với đội mũ thì tóc càng dễ sập form lắm.”</div>
+          <div class="say">“Nam giới mình 80% đều bị giống anh, tóc cứ được 1–2 tiếng là xẹp xuống, tạo kiểu không giữ được lâu.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">2</span><span class="t">Giải pháp — 3 điểm</span><span class="chev">▶</span></div>
+        <div class="body"><div class="say">“Em dùng cho anh xịt phồng Glanzen Booster 2025 — không phải wax, không phải keo, KHÔNG làm tóc bết hay cứng. 3 cái lợi: <b>phồng tự nhiên</b> không lộ dùng sản phẩm; <b>giữ phồng 5–8 tiếng</b> kể cả đội mũ; <b>bảo vệ tóc khỏi nhiệt</b> khi sấy, tránh khô gãy.”</div></div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">3</span><span class="t">Demo + chốt mềm</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Em xịt thử 2 nhát cho anh xem. Nếu tóc không phồng tự nhiên, anh không cần dùng.”</div>
+          <div class="say">“Anh nhìn này, tóc dày – tơi – phồng hơn rõ nhưng vẫn mềm tự nhiên. Anh sờ thử xem, không hề cứng đúng không ạ?”</div>
+          <div class="say">“Cái này hợp tóc anh thật sự, mỗi sáng chỉ cần 2 giây xịt – 1 phút sấy là tóc cả ngày đẹp. Anh muốn em hướng dẫn tự làm ở nhà luôn không ạ?”</div>
+        </div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý từ chối</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Không thích dùng đồ lên tóc.”</b></p>
+          <div class="say">“Dạ xịt này đúng chất nhẹ – không nhìn thấy sản phẩm. Người đối diện nhìn vào không biết mình dùng gì, chỉ giúp tóc dày hơn – đứng form thôi.”</div>
+          <p class="lead"><b>“Dùng nhiều loại rồi không ăn thua.”</b></p>
+          <div class="say">“Dạ Glanzen khác ở chỗ là pre-styling công nghệ Đức, chứ không phải xịt phồng phổ thông. Nó tạo độ tơi từ chân tóc nên đội mũ cũng khó xẹp.”</div>
+          <p class="lead"><b>“Để lần sau.”</b></p>
+          <div class="say">“Dạ tóc anh đang mỏng + thưa, rất dễ xẹp. Dùng chai này 1–2 tuần là tóc phồng tự nhiên hơn, không cần vuốt sáp nhiều. Anh dùng thử 1 chai, không hợp em đổi sản phẩm cho anh cũng được.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" id="nga-sp6">
+    <div class="card">
+      <h2>🧴 Sáp Glanzen (Xanh / Limited)</h2>
+      <div class="tagrow"><span class="tag">Clay + Fiber</span><span class="tag">Matte – không bóng</span><span class="tag">Hút dầu chân tóc</span></div>
+
+      <div class="acc open">
+        <div class="head"><span class="num">A</span><span class="t">Mở đầu — bắt trúng vấn đề</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Anh cho em hỏi trước để tư vấn đúng: anh hay gặp tình trạng gì khi dùng sáp? Bết – nhanh xẹp – hay khô cứng ạ?”</div>
+          <div class="say">“Em nhìn tóc anh thì đúng là chất tóc mảnh/dễ đổ/dễ bết, nên không phải loại sáp nào cũng phù hợp đâu ạ.”</div>
+        </div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">B</span><span class="t">Giá trị nổi bật (Glanzen Xanh)</span><span class="chev">▶</span></div>
+        <div class="body"><div class="say">“Glanzen xanh em hay dùng cho khách tóc khó nhất vì: <b>không bóng – không bết</b>; <b>cứng vừa – giữ nếp lâu</b> nhưng sờ vẫn mềm; <b>hút dầu ở chân tóc</b> nên tóc mỏng cũng đứng được; không bị đông cục như clay ngoại. Nền Clay + sợi Fiber: Clay tơi tóc – hút dầu, Fiber kết dính mềm; gặp gió, mồ hôi vẫn không chảy – không bóng lại.”</div></div>
+      </div>
+      <div class="acc">
+        <div class="head"><span class="num">C</span><span class="t">Demo + chốt</span><span class="chev">▶</span></div>
+        <div class="body">
+          <div class="say">“Giờ em bôi thử cho anh nửa đầu nhé. Nếu bị bết hay nặng đầu như anh lo, em không để anh lấy đâu.”</div>
+          <div class="say">“Anh thấy không ạ: tóc đứng form nhưng không cứng, chạm vẫn mềm, từng sợi tách nhẹ không dính mảng, đặc biệt không bóng – không bệt kể cả tóc hơi mảnh.”</div>
+          <div class="say">“Hiện form tóc anh hợp Glanzen xanh nhất. Anh lấy 1 hũ dùng thử 7–10 ngày, không hợp em hỗ trợ đổi form khác cho anh.”</div>
+        </div>
+      </div>
+      <div class="acc refuse">
+        <div class="head"><span class="num">!</span><span class="t">Xử lý phản biện</span><span class="chev">▶</span></div>
+        <div class="body">
+          <p class="lead"><b>“Sợ bết lắm.”</b></p>
+          <div class="say">“Dạ tóc mảnh dùng wax bóng hoặc nhiều dầu là bết ngay. Glanzen xanh nền clay hút dầu, càng ra mồ hôi càng tơi – khô – sạch.”</div>
+          <p class="lead"><b>“Dùng clay rồi vẫn bị đơ tóc.”</b></p>
+          <div class="say">“Đa phần clay ngoại nặng đầu vì tỷ lệ sáp cao. Glanzen xanh nhẹ hơn, tán mềm, không kéo tụt sợi tóc xuống.”</div>
+          <p class="lead"><b>“Không biết dùng.”</b></p>
+          <div class="say">“Chỉ cần 1 lượng bằng đốt ngón út, xoa tan rồi bôi từ sau ra trước. Anh làm 2–3 ngày là quen form ngay.”</div>
+          <p class="lead"><b>“Dùng không hợp thì sao?”</b></p>
+          <div class="say">“Không sao ạ, anh quay lại em chỉnh form – chỉnh cách dùng đến khi hợp thì thôi. Cứ coi như anh đang có stylist riêng.”</div>
+          <p class="lead">Bản Limited 2024:</p>
+          <div class="say">“Bản Glanzen Gentleman Limited cao hơn bản thường: <b>giữ nếp X2</b>, đứng form sáng tới tối; <b>Matte Finish</b> khô tự nhiên không bóng; Kaolin + Carnauba nhập Đức hút dầu tốt; dành cho tóc dày – cứng – khó vào nếp; đội mũ bảo hiểm xong vẫn dựng lại rất nhanh. Đặc biệt bản Limited, số lượng không nhiều.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint">💡 Bấm vào bất kỳ câu thoại nào để copy.</p>
+</section>
+
+<!-- ====== NGA · SKINNER ====== -->
+<section class="panel" id="nga-skinner">
+  <p class="intro">Quy trình upsale gói dịch vụ dành cho Skinner — tăng tỷ lệ gói cao mà vẫn giữ trải nghiệm 5⭐.</p>
+
+  <div class="card">
+    <h2>Quy trình UPSALE chuẩn cho Skinner</h2>
+    <div class="acc open">
+      <div class="head"><span class="num">1</span><span class="t">Trước khi bắt đầu dịch vụ</span><span class="chev">▶</span></div>
+      <div class="body"><ul class="guide">
+        <li>Xin phép khách được giới thiệu nhanh gói dịch vụ.</li>
+        <li>Quan sát <b>tóc – da đầu – trạng thái khách</b> để đề xuất gói phù hợp.</li>
+        <li>Gợi ý nâng gói <b>chỉ 1 lần</b> (1→2 hoặc 2→3 hoặc 3→4).</li>
+        <li>Không giải thích dài dòng — chỉ nói điểm khác biệt chính.</li>
+      </ul></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">2</span><span class="t">Trong quá trình làm dịch vụ</span><span class="chev">▶</span></div>
+      <div class="body"><ul class="guide">
+        <li>Không upsale khi khách đang nhắm mắt, thư giãn hoặc ngủ.</li>
+        <li>Chỉ nhắc <b>1 câu nhẹ</b> nếu khách hỏi hoặc có dấu hiệu muốn trải nghiệm hơn.</li>
+        <li>Luôn giữ giọng nhỏ – nhẹ, không làm khách mất mood.</li>
+      </ul></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">3</span><span class="t">Khi khách ngồi dậy</span><span class="chev">▶</span></div>
+      <div class="body"><ul class="guide">
+        <li>Bóp vai/bóp tay 2–3 giây để khách tỉnh.</li>
+        <li>Nhắc “lần sau có thể thử gói cao hơn để trải nghiệm tốt hơn”.</li>
+        <li>Tuyệt đối <b>không ép – không nói nhiều</b>.</li>
+      </ul></div>
+    </div>
+    <div class="do"><b>Nguyên tắc chung:</b> mỗi khách chỉ upsale 1 lần trước + 1 lần nhắc nhẹ sau. Không bao giờ hỏi “anh/chị có làm thêm không?” → đổi thành <b>“em đề xuất … vì …”</b>. Khách thấy được “chăm sóc”, không phải “bị bán hàng”.</div>
+  </div>
+
+  <div class="card">
+    <h2>Danh sách nhân sự được phép upsale</h2>
+    <table>
+      <tr><th class="c">STT</th><th>Tên nhân sự</th><th>Salon</th></tr>
+      <tr><td class="c">1</td><td>Vũ Thị Minh-1804</td><td>382NT</td></tr>
+      <tr><td class="c">2</td><td>Nguyễn Thị Lan-18586</td><td>382NT</td></tr>
+      <tr><td class="c">3</td><td>Nguyễn Thị Hiếu-14251</td><td>168NVC</td></tr>
+      <tr><td class="c">4</td><td>Nguyễn Thị Hiếu-14251</td><td>10TP</td></tr>
+      <tr><td class="c">5</td><td>Nguyễn Thị Lành-19283</td><td>10TP</td></tr>
+      <tr><td class="c">6</td><td>Nguyễn Thị Thêu-1909</td><td>168NVC</td></tr>
+      <tr><td class="c">7</td><td>La Thị Duyên-17789</td><td>62LH</td></tr>
+      <tr><td class="c">8</td><td>Cao Thị Linh-9070</td><td>39HBT</td></tr>
+      <tr><td class="c">9</td><td>Lê Thị Anh-17158</td><td>173TN</td></tr>
+      <tr><td class="c">10</td><td>Ngô Thị Nhung-14289</td><td>173TN</td></tr>
+      <tr><td class="c">11</td><td>Thừa Thị Nguyệt-13443</td><td>202DC</td></tr>
+      <tr><td class="c">12</td><td>Nguyễn Thị Ngần-5015</td><td>202ĐC</td></tr>
+      <tr><td class="c">13</td><td>Phạm Thị Duyên-9504</td><td>50BT4 NPC LD</td></tr>
+      <tr><td class="c">14</td><td>Nguyễn Thuỳ Linh-14640</td><td>148TD</td></tr>
+      <tr><td class="c">15</td><td>Trần Thảo Mi-20820</td><td>65CD</td></tr>
+      <tr><td class="c">16</td><td>Ngô Thị Huyền Trang-9378</td><td>50BT4 NPC LD</td></tr>
+    </table>
+  </div>
+</section>
+</div><!-- /t-nga -->
+
+
+<!-- ################# THANH TÂM ################# -->
+<div class="trainer" id="t-tt">
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tab active" data-tab="tt-hoachat"><span class="ico">✂️</span>Hóa chất</div>
+    <div class="tab" data-tab="tt-undhe"><span class="ico">💧</span>UND hè</div>
+    <div class="tab" data-tab="tt-massage"><span class="ico">💆</span>Massage</div>
+  </div>
+</nav>
+
+<!-- ====== THANH TÂM · HÓA CHẤT ====== -->
+<section class="panel active" id="tt-hoachat">
+  <p class="intro">Tư vấn uốn/nhuộm — gợi nhu cầu → tạo hình dung → đưa giải pháp → chốt tự nhiên. Bấm câu thoại để copy.</p>
+
+  <div class="card">
+    <h2>⭐ Quy tắc vàng</h2>
+    <ul class="guide">
+      <li><b>KHÔNG dùng:</b> “Có không?”, “Được không?”, “Có … không?”.</li>
+      <li><b>Thay bằng:</b> câu khẳng định, gợi mở, tạo hình dung.</li>
+      <li><b>Úp sale sớm:</b> ngay từ đầu, không úp giữa hay cuối.</li>
+      <li><b>Tư duy:</b> Gợi nhu cầu → Tạo hình dung → Đưa giải pháp → Chốt tự nhiên.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>4 tình huống mẫu</h2>
+    <p class="lead">Bấm từng tình huống để xem cách stylist xử lý.</p>
+
+    <div class="acc kbn open">
+      <div class="head"><span class="num">1</span><span class="t">Khách mới — tóc thẳng, chưa làm gì</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Khách: “Cho em cắt đầu thôi anh.”</p>
+        <div class="say">“Dạ em xem lịch sử, anh chưa uốn nhuộm gì bao giờ nhỉ. Tết này để tóc thẳng trơn kiểu cũ hơi nhạt anh ạ. Anh để em tư vấn combo <b>Uốn Hàn Quốc 499K</b> – giữ 2 tháng, đang chạy chương trình Tết.”</div>
+        <div class="say">“Với tóc mảnh của anh, em uốn kiểu <b>Perm nở</b> kết hợp <b>Side ép</b> tạo phồng tự nhiên mà vẫn gọn. Nhuộm tone <b>Nâu Hạt Dẻ</b> hợp da anh lắm. Anh coi mẫu này nhé. Về nhà chỉ cần gội sấy là đẹp. Làm chỉ 15–20 phút, em xếp lịch luôn cho anh?”</div>
+      </div>
+    </div>
+
+    <div class="acc kbn">
+      <div class="head"><span class="num">2</span><span class="t">Khách cũ — đã nhuộm, giờ phai</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Khách: “Cắt như cũ anh ơi.”</p>
+        <div class="say">“Dạ em thấy màu nhuộm lần trước đã phai 70% rồi, để thế này hơi xỉn anh ạ. Tết này anh thử đổi kiểu mới đi — bên em có bộ màu Hot Trend 2025: Nâu Khói, Xám Tro, Nâu Hạt Dẻ.”</div>
+        <div class="say">“Với tone da của anh, em recommend <b>Nâu Khói</b> – nam tính, sang, không lo xanh đỏ tím vàng như nhuộm bên ngoài. Combo <b>Cắt + Nhuộm + Dưỡng Phục Hồi 599K</b>, giữ màu 6–8 tuần. Em nhuộm cho anh luôn nhé, làm xong trẻ hơn 5 tuổi đấy!”</div>
+      </div>
+    </div>
+
+    <div class="acc kbn">
+      <div class="head"><span class="num">3</span><span class="t">Khách uốn cũ — tóc xơ, bay</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Khách: “Tóc em uốn hồi nào giờ xoăn quá, cắt ngắn lại đi anh.”</p>
+        <div class="say">“Dạ em thấy rồi, lần trước anh uốn chỗ khác phải không ạ? Tóc bị xơ và xoăn quá tự nhiên nên giờ bung bay khó tạo kiểu.”</div>
+        <div class="say">“Em có giải pháp: <b>Ép Side kết hợp Uốn Form Mới 599K</b>. Em ép phần bên cho gọn, phần mái và đỉnh uốn lại Perm tự nhiên – không còn xoăn tít như cũ. Về nhà chỉ cần gội + sấy, làm 15–20 phút. Bên em còn tặng kèm sáp vuốt tóc. Anh làm luôn nhé?”</div>
+      </div>
+    </div>
+
+    <div class="acc kbn">
+      <div class="head"><span class="num">4</span><span class="t">Khách trẻ — muốn nổi bật</span><span class="chev">▶</span></div>
+      <div class="body">
+        <p class="lead">Khách: “Cho em kiểu trẻ trung, nổi bật tí anh.”</p>
+        <div class="say">“Oke anh, Tết này muốn đổi vận, rực rỡ thì phải làm tóc mới được! Em gợi ý combo <b>Uốn + Nhuộm phục hồi 699K</b> (sale Tết từ 899K): uốn Two-Block Perm phồng đỉnh gọn 2 bên, nhuộm Highlight nâu + vàng khói trẻ trung không quá chói.”</div>
+        <div class="say">“Giữ 2 tháng, làm 20–25 phút, tặng kèm dưỡng phục hồi + sáp tạo kiểu. Em làm luôn cho anh nhé, đảm bảo Tết này anh nổi nhất hội!”</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cấu trúc tư vấn chuẩn — 5 bước</h2>
+    <ul class="guide">
+      <li><b>1 · Mở đầu – check lịch sử:</b> “Em xem lịch sử, anh [đã/chưa] làm [dịch vụ] nhỉ…”</li>
+      <li><b>2 · Gợi nhu cầu – chỉ vấn đề:</b> “Tết này mà [tóc thẳng/màu phai/xoăn xơ] hơi [nhạt/xỉn/khó tạo kiểu] anh nhỉ…”</li>
+      <li><b>3 · Đưa giải pháp:</b> combo cụ thể + giá + thời gian giữ + 3–4 lợi ích.</li>
+      <li><b>4 · Tạo hình dung:</b> show ảnh TRƯỚC/SAU, case khách thật, hợp tone da/độ tuổi.</li>
+      <li><b>5 · Chốt tự nhiên:</b> ❌ “Anh làm có không ạ?” → ✅ “Em làm luôn cho anh nhé?”.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Bộ câu chốt (không dùng “không”)</h2>
+    <h3>Chốt khẳng định</h3>
+    <div class="say">“Em làm luôn cho anh nhé?”</div>
+    <div class="say">“Em xếp lịch luôn nhé anh?”</div>
+    <div class="say">“Anh ngồi vào đây em làm luôn?”</div>
+    <h3>Chốt gợi ý</h3>
+    <div class="say">“Tết này làm đẹp đi anh, về quê ai cũng khen!”</div>
+    <div class="say">“Làm xong anh trẻ hơn 5 tuổi đấy!”</div>
+    <div class="say">“Đảm bảo anh nổi nhất hội đấy!”</div>
+    <h3>Chốt giới hạn</h3>
+    <div class="say">“Hôm nay slot cuối rồi anh, làm luôn đi!”</div>
+    <div class="say">“Sale Tết chỉ còn 3 ngày thôi anh!”</div>
+  </div>
+
+  <div class="card">
+    <h2>Xử lý từ chối</h2>
+    <div class="acc refuse open">
+      <div class="head"><span class="num">1</span><span class="t">“Để em về suy nghĩ…”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ anh suy nghĩ thoải mái ạ. Nhưng em lưu ý: <b>sale Tết chỉ còn đến hết tuần này</b> – sau đó về 899K; <b>slot đang gần kín</b> – làm Tết cần book trước 2–3 ngày; tóc anh hiện [phai/xơ/nhạt] thế này để càng lâu càng khó phục hồi. Anh cân nhắc rồi nhắn em, em giữ slot sẵn. Hoặc anh làm luôn giờ cho tiện?”</div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">2</span><span class="t">“Hôm nay bận, chỉ cắt thôi…”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ được anh, em cắt trước. Nhưng để em <b>book sẵn slot tuần sau</b> làm combo này nhé – giá sale chỉ còn 2 ngày, tóc anh [vấn đề] cắt xong vẫn còn đó, làm combo mới hiệu quả lâu dài 2 tháng. Em note số anh, tuần sau nhắc nhé? Hoặc anh làm luôn giờ, 20 phút thôi anh!”</div></div>
+    </div>
+    <div class="note"><b>Lưu ý:</b> kịch bản là hướng dẫn linh hoạt — điều chỉnh theo tâm lý khách (vội/thảnh thơi), độ tuổi, ngân sách. Nhưng luôn giữ: gợi nhu cầu → đưa giải pháp → chốt tự nhiên.</div>
+  </div>
+</section>
+
+<!-- ====== THANH TÂM · UND HÈ ====== -->
+<section class="panel" id="tt-undhe">
+  <p class="intro">Nâng cấp gói UND (dịch vụ + dưỡng phục hồi) trong mùa hè. Tư duy: bảo vệ &amp; cải thiện chất tóc, không bán bằng mọi giá.</p>
+
+  <div class="card">
+    <h2>Câu mở lời theo dịch vụ</h2>
+    <div class="acc open">
+      <div class="head"><span class="num">1</span><span class="t">Khách chỉ đăng ký nhuộm</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Anh/chị hôm nay nhuộm màu đúng không ạ? Mùa hè tóc tiếp xúc nhiều nắng và hóa chất nên rất dễ khô xơ, phai màu nhanh. Bên em có gói UND gồm nhuộm kết hợp dưỡng phục hồi sau nhuộm, giữ màu lâu hơn và tóc mềm mượt hơn. Anh/chị nâng cấp lên gói đó luôn nhé?”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">2</span><span class="t">Khách chỉ đăng ký uốn</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Anh/chị uốn tóc sẽ phải dùng hóa chất tác động lên tóc. Nếu không dưỡng phục hồi ngay thì tóc rất dễ khô và gãy, đặc biệt mùa hè. Bên em có gói UND gồm uốn kết hợp dưỡng chuyên sâu sau uốn, giúp tóc khỏe hơn và giữ nếp tốt hơn. Anh/chị làm luôn gói đó nhé?”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">3</span><span class="t">Từng làm hóa chất, nay chỉ cắt/gội</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Anh/chị gần đây có nhuộm hoặc uốn tóc không ạ? Em thấy tóc đang có dấu hiệu khô do tác động hóa chất. Bên em có gói dưỡng phục hồi trong bộ UND giúp tóc mềm và khỏe hơn rõ rệt. Anh/chị thêm vào hôm nay luôn nhé?”</div></div>
+    </div>
+    <div class="acc">
+      <div class="head"><span class="num">4</span><span class="t">Chưa từng làm hóa chất</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Anh/chị có dự định đổi kiểu tóc mùa hè này không ạ? Nhiều khách đang chọn nhuộm màu sáng hoặc uốn nhẹ để đổi diện mạo. Bên em có gói UND trọn gói uốn hoặc nhuộm kèm dưỡng, chi phí tốt hơn làm riêng lẻ. Anh/chị muốn em tư vấn thử không ạ?”</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Xử lý từ chối</h2>
+    <div class="acc refuse open">
+      <div class="head"><span class="num">1</span><span class="t">Hỏi giá / cho rằng đắt</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ gói UND là [X] nghìn anh/chị nhé. Làm riêng từng dịch vụ thì chi phí cao hơn. Làm theo gói vừa tiết kiệm hơn vừa hiệu quả tốt hơn vì các bước được thực hiện đồng bộ. Anh/chị cân nhắc trải nghiệm lần này nhé.”</div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">2</span><span class="t">“Để lần sau”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ thực ra dưỡng sau nhuộm/uốn hiệu quả nhất là làm ngay trong ngày, vì lúc đó tóc đang mở lớp cutin nên dưỡng chất thẩm thấu tốt hơn rất nhiều. Để lần sau hiệu quả sẽ không bằng. Anh/chị cân nhắc làm luôn hôm nay nhé.”</div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">3</span><span class="t">“Tóc khỏe, không cần dưỡng”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ nhìn bên ngoài tóc vẫn bình thường nhưng sau mỗi lần dùng hóa chất, cấu trúc tóc bên trong đều bị ảnh hưởng. Tổn thương này thường xuất hiện sau một thời gian dưới dạng khô xơ hoặc gãy rụng. Dưỡng ngay sau hóa chất là cách tốt nhất để giữ tóc khỏe lâu dài.”</div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">4</span><span class="t">“Làm rồi nhưng không thấy khác”</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ lần trước anh/chị dùng gói dưỡng nào ạ? Gói UND là dưỡng chuyên biệt cho tóc sau hóa chất, tập trung phục hồi lớp cutin bị tổn thương sau uốn/nhuộm nên khác các gói dưỡng thông thường. Anh/chị trải nghiệm để cảm nhận sự khác biệt ạ.”</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chốt gói</h2>
+    <p class="lead">Khách đồng ý:</p>
+    <div class="say">“Dạ em ghi nhận ngay cho anh/chị nhé. Em báo bộ phận chuẩn bị để thực hiện đồng thời, giúp mình tiết kiệm thời gian.”</div>
+    <p class="lead">Khách phân vân:</p>
+    <div class="say">“Anh/chị đang làm hóa chất hôm nay nên đây là thời điểm tốt nhất để dưỡng phục hồi. Làm riêng lần sau hiệu quả sẽ không bằng. Làm cùng hôm nay vừa tiện vừa tiết kiệm thời gian hơn nhiều.”</div>
+    <p class="lead">Khách hỏi hiệu quả:</p>
+    <div class="say">“Sau khi làm, tóc sẽ mềm hơn, khỏe hơn, giữ màu nhuộm và nếp uốn tốt hơn nhờ phục hồi lớp cutin. Rất nhiều khách phản hồi tóc khác biệt rõ rệt so với chỉ làm dịch vụ đơn lẻ.”</div>
+  </div>
+</section>
+
+<!-- ====== THANH TÂM · MASSAGE ====== -->
+<section class="panel" id="tt-massage">
+  <p class="intro">Upsell massage thư giãn cổ vai gáy (Skinner) — tư vấn ngay sau khi xác nhận dịch vụ, trước khi gội. Chỉ xử lý từ chối 1 lần.</p>
+
+  <div class="card">
+    <h2>Câu mở lời</h2>
+    <h3>Khách vội, ít thời gian</h3>
+    <div class="say">“Anh/chị hôm nay gội thường đúng không ạ? Bên em có thêm dịch vụ massage thư giãn cổ vai gáy, chỉ mất thêm khoảng x phút thôi. Anh/chị trải nghiệm thử nhé?”<small>Nhấn “chỉ thêm x phút”, nói ngắn gọn.</small></div>
+    <h3>Khách lần đầu</h3>
+    <div class="say">“Đây là lần đầu anh/chị trải nghiệm tại 30Shine đúng không ạ? Bên em có dịch vụ massage thư giãn cổ vai gáy, rất phù hợp với người ngồi làm việc lâu hoặc hay căng mỏi vai gáy. Anh/chị trải nghiệm thử hôm nay nhé?”</div>
+    <h3>Khách quen</h3>
+    <div class="say">“Anh/chị lần này thêm massage cổ vai gáy luôn không ạ? Làm xong sẽ thấy thư giãn và thoải mái hơn rất nhiều.”</div>
+  </div>
+
+  <div class="card">
+    <h2>Xử lý từ chối</h2>
+    <div class="acc refuse open">
+      <div class="head"><span class="num">1</span><span class="t">Khách quan tâm giá</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ dịch vụ là [X] nghìn anh/chị nhé. Sau khi làm sẽ giúp vùng cổ vai gáy thư giãn và dễ chịu hơn rất nhiều. Anh/chị trải nghiệm thử lần này nhé?”<small>Chỉ chốt lại thêm một lần.</small></div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">2</span><span class="t">Khách bận / hẹn lần sau</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ em hiểu rồi ạ. Lần sau em sẽ nhắc anh/chị trải nghiệm nhé.”<small>Không cố thuyết phục thêm.</small></div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">3</span><span class="t">Khách từ chối dứt khoát</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ vâng anh/chị. Em chuẩn bị dịch vụ gội cho anh/chị ngay ạ.”<small>Dừng tư vấn, chuyển sang dịch vụ chính.</small></div></div>
+    </div>
+    <div class="acc refuse">
+      <div class="head"><span class="num">4</span><span class="t">Từng trải nghiệm, chưa thấy hiệu quả</span><span class="chev">▶</span></div>
+      <div class="body"><div class="say">“Dạ lần trước anh/chị trải nghiệm tại 30Shine hay đơn vị khác ạ? Bên em sẽ điều chỉnh kỹ thuật massage phù hợp với từng khách. Anh/chị trải nghiệm thêm một lần để cảm nhận sự khác biệt nhé.”<small>Nếu vẫn từ chối thì dừng.</small></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3 nguyên tắc Skinner cần nhớ</h2>
+    <ul class="guide">
+      <li><b>Chỉ xử lý từ chối 1 lần</b> — khách vẫn không đồng ý thì chuyển ngay sang dịch vụ chính.</li>
+      <li><b>Giọng điệu tự nhiên</b> — không đọc thuộc lòng, không tạo cảm giác ép buộc.</li>
+      <li><b>Từ chối hôm nay không phải từ chối mãi mãi</b> — giữ thái độ tích cực để tạo cơ hội lần sau.</li>
+    </ul>
+  </div>
+</section>
+</div><!-- /t-tt -->
 
 </main>
 
-<div class="footer">Tài liệu nội bộ · Cụm Mai Loan · Đào tạo Salesup T6</div>
+<div class="footer">Tài liệu nội bộ · Cụm Mai Loan · Đào tạo Salesup T6 — Mai Loan · Nga · Thanh Tâm</div>
 <div class="toast" id="toast">Đã copy!</div>
 
 <script>
-  // main tabs
+  // trainer (person) selector
+  document.querySelectorAll('.ptab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.ptab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.trainer').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById(t.dataset.trainer).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  // content tabs (scoped within each trainer)
   document.querySelectorAll('.tab').forEach(t=>{
     t.addEventListener('click',()=>{
-      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+      const scope=t.closest('.trainer');
+      scope.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      scope.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
       t.classList.add('active');
       document.getElementById(t.dataset.tab).classList.add('active');
       window.scrollTo({top:0,behavior:'smooth'});
     });
   });
 
-  // sub nav (products)
-  document.querySelectorAll('#spnav .pill').forEach(p=>{
+  // sub nav (products) — scoped within its panel
+  document.querySelectorAll('.subnav .pill').forEach(p=>{
     p.addEventListener('click',()=>{
-      document.querySelectorAll('#spnav .pill').forEach(x=>x.classList.remove('active'));
-      document.querySelectorAll('.sub').forEach(x=>x.classList.remove('active'));
+      const scope=p.closest('.panel');
+      scope.querySelectorAll('.subnav .pill').forEach(x=>x.classList.remove('active'));
+      scope.querySelectorAll('.sub').forEach(x=>x.classList.remove('active'));
       p.classList.add('active');
       document.getElementById(p.dataset.sub).classList.add('active');
     });
@@ -962,7 +1797,7 @@
     h.addEventListener('click',()=>h.parentElement.classList.toggle('open'));
   });
   function allAcc(open){
-    document.querySelectorAll('.panel.active .acc').forEach(a=>{
+    document.querySelectorAll('.trainer.active .panel.active .acc').forEach(a=>{
       open?a.classList.add('open'):a.classList.remove('open');
     });
   }
